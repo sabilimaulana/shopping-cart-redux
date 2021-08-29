@@ -7,7 +7,7 @@ const Cart = () => {
   return (
     <div className={styles.cart}>
       <div className={styles.cart__items}>
-        <CartItem key={item.id} item={item} />
+        {/* <CartItem key={item.id} item={item} /> */}
       </div>
       <div className={styles.cart__summary}>
         <h4 className={styles.summary__title}>Cart Summary</h4>
