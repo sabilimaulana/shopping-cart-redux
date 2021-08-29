@@ -1,3 +1,6 @@
+- Thanks to The Full Stack Junkie.
+- Tutorial video https://youtu.be/MNs_7avLIJ4
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
