@@ -1,8 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../../redux/Shopping/shopping-actions";
 import styles from "./Product.module.css";
 
-const Product = ({ productData }) => {
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id)),
+  };
+};
+
+const Product = ({ productData, addToCart }) => {
   return (
     <div className={styles.product}>
       <img
@@ -23,7 +31,10 @@ const Product = ({ productData }) => {
             View Item
           </button>
         </Link>
-        <button className={`${styles.buttons__btn} ${styles.buttons__add}`}>
+        <button
+          className={`${styles.buttons__btn} ${styles.buttons__add}`}
+          onClick={() => addToCart(productData.id)}
+        >
           Add To Cart
         </button>
       </div>
@@ -31,4 +42,4 @@ const Product = ({ productData }) => {
   );
 };
 
-export default Product;
+export default connect(null, mapDispatchToProps)(Product);
